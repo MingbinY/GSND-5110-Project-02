@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
 
     private PlayerLocomotion locomotion;
     private PlayerLook look;
+    private PlayerWeaponSlot weaponSlot;
 
     private void OnEnable()
     {
@@ -28,12 +29,17 @@ public class InputManager : MonoBehaviour
 
         locomotion = GetComponent<PlayerLocomotion>();
         look = GetComponent<PlayerLook>();
+        weaponSlot = GetComponent<PlayerWeaponSlot>();
 
         onFootActions.Jump.performed += i => locomotion.HandleJump();
     }
 
     private void FixedUpdate()
     {
+        if (onFootActions.Fire.IsPressed())
+        {
+            weaponSlot.FireWeapon();
+        }
         locomotion.HandleMove(onFootActions.Movement.ReadValue<Vector2>());
     }
 
