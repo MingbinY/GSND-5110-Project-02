@@ -6,6 +6,7 @@ public class BasicHealthManager : MonoBehaviour
 {
     public int maxHealth = 100;
     public int health;
+    public bool isDead { get; private set; }
 
     public float regenerateRate = 0f;
     
@@ -18,6 +19,7 @@ public class BasicHealthManager : MonoBehaviour
     {
         if (health <= 0)
         {
+            isDead = true;
             Death();
         }
     }
