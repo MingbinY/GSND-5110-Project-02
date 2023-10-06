@@ -19,6 +19,7 @@ public class EnemyGunAgent : AiAgent
     public float detectionRange = 15f;
     public float sightRange = 10f;
     public float attackRange = 5f;
+    public float attackStopRange = 3f;
 
     public override void Awake()
     {
@@ -55,6 +56,7 @@ public class EnemyGunAgent : AiAgent
 
     void ChaseUpdate()
     {
+        navMeshAgent.stoppingDistance = 0;
         if (DistanceToPlayer() < attackRange)
         {
             currentState = GunEnemyState.attack;
@@ -65,6 +67,7 @@ public class EnemyGunAgent : AiAgent
 
     void AttackUpdate()
     {
+        navMeshAgent.stoppingDistance = Random.Range(attackStopRange, attackRange);
         if (playerObj.GetComponent<BasicHealthManager>().isDead)
         {
             this.enabled = false;
