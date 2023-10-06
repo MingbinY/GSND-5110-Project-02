@@ -36,7 +36,9 @@ public class EnemyRaycastWeapon : MonoBehaviour
         tracer.AddPosition(muzzle.position);
 
         RaycastHit hit;
-        if (Physics.Raycast(agent.transform.position, agent.transform.forward, out hit)) // player aim at something
+        Vector3 fwd = agent.transform.forward;
+        fwd = fwd + agent.transform.TransformDirection(new Vector3(Random.Range(-bulletSpreadVariance.x, bulletSpreadVariance.x), Random.Range(-bulletSpreadVariance.y, bulletSpreadVariance.y), Random.Range(-bulletSpreadVariance.z, bulletSpreadVariance.z)));
+        if (Physics.Raycast(agent.transform.position, fwd, out hit)) // player aim at something
         {
             GameObject objectHit = hit.collider.gameObject;
             //Generate tracer effect
