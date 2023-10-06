@@ -34,6 +34,9 @@ public class RaycastWeapon : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit)) // player aim at something
         {
             GameObject objectHit = hit.collider.gameObject;
+            //Generate tracer effect
+
+            tracer.transform.position = hit.point;
             if (Physics.Raycast(muzzle.transform.position, objectHit.transform.position - muzzle.transform.position, out hit))
             {
                 //Actual object hit by weapon
@@ -44,10 +47,6 @@ public class RaycastWeapon : MonoBehaviour
                     // hit someone with health
                     healthManager.TakeDamage(damage);
                 }
-
-                //Generate tracer effect
-
-                tracer.transform.position = hit.point;
 
                 //Generate hit effect
                 if (impactEffect)
