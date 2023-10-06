@@ -14,9 +14,10 @@ public class RaycastWeapon : MonoBehaviour
 
     public Transform muzzle;
 
-    public ParticleSystem impactParticleSystem;
+    public ParticleSystem impactEffect;
     public ParticleSystem[] muzzleFlash;
-    public TrailRenderer bulletTrail;
+
+    public TrailRenderer tracerEffect;
 
     private float lastShootTime = 0;
 
@@ -26,6 +27,8 @@ public class RaycastWeapon : MonoBehaviour
 
         lastShootTime = Time.time;
         foreach (var particle in muzzleFlash) particle.Emit(1);
+        var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
+        tracer.AddPosition(muzzle.position);
 
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit)) // player aim at something
@@ -41,6 +44,19 @@ public class RaycastWeapon : MonoBehaviour
                     // hit someone with health
                     healthManager.TakeDamage(damage);
                 }
+
+                //Generate tracer effect
+
+                tracer.transform.position = hit.point;
+
+                //Generate hit effect
+                if (impactEffect)
+                {
+                    impactEffect.transform.position = hit.transform.position;
+                    impactEffect.transform.forward = hit.normal;
+                    impactEffect.Emit(1);
+                }
+                
             }
         }
     }
