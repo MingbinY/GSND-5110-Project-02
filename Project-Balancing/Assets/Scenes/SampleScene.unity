@@ -12628,13 +12628,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6591421406238588014, guid: 1bbb9b616892e6247aa3421063846465,
+        type: 3}
+      propertyPath: weaponStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 55923ed904709044d83f5510597af430,
+        type: 2}
+    - target: {fileID: 6591421406238588014, guid: 1bbb9b616892e6247aa3421063846465,
+        type: 3}
+      propertyPath: muzzleFlash.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591421406238588014, guid: 1bbb9b616892e6247aa3421063846465,
+        type: 3}
+      propertyPath: muzzleFlash.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7629846076682424255, guid: 1bbb9b616892e6247aa3421063846465,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8897991910019721186, guid: 1bbb9b616892e6247aa3421063846465, type: 3}
+    - {fileID: 1190086667504714141, guid: 1bbb9b616892e6247aa3421063846465, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bbb9b616892e6247aa3421063846465, type: 3}

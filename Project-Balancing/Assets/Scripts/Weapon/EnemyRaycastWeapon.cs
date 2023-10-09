@@ -4,26 +4,38 @@ using UnityEngine;
 
 public class EnemyRaycastWeapon : MonoBehaviour
 {
-    public int damage = 10;
     public GameObject agent;
 
-    public bool addBulletSpread = true;
-    public Vector3 bulletSpreadVariance = Vector3.zero;
-
-    public float fireInterval = 0.5f;
-
+    public WeaponStats weaponStats;
     public Transform muzzle;
 
-    public ParticleSystem impactEffect;
-    public ParticleSystem[] muzzleFlash;
-
-    public TrailRenderer tracerEffect;
+    private ParticleSystem impactEffect;
+    [SerializeField] private List<ParticleSystem> muzzleFlash;
+    private TrailRenderer tracerEffect;
 
     private float lastShootTime = 0;
+    private int damage;
+    private float fireInterval = 0.5f;
+    private Vector3 bulletSpreadVariance = Vector3.zero;
+    private bool addBulletSpread = true;
+    bool reloading = false;
 
     private void Awake()
     {
         agent = GetComponentInParent<AiAgent>().gameObject;
+
+        damage = weaponStats.damage;
+        fireInterval = weaponStats.fireInterval;
+        bulletSpreadVariance = weaponStats.bulletSpreadVariance;
+        addBulletSpread = weaponStats.addBulletSpread;
+
+        foreach (ParticleSystem particle in weaponStats.muzzleFlash)
+        {
+            ParticleSystem flash = Instantiate(particle, muzzle.position, muzzle.rotation, muzzle);
+            muzzleFlash.Add(flash);
+        }
+
+        tracerEffect = weaponStats.tracerEffect;
     }
 
     public virtual void Fire()
