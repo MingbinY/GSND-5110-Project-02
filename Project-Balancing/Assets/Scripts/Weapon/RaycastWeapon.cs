@@ -12,18 +12,20 @@ public class RaycastWeapon : MonoBehaviour
     private ParticleSystem impactEffect;
     [SerializeField] private List<ParticleSystem> muzzleFlash;
     private TrailRenderer tracerEffect;
+    WeaponUI weaponUI;
 
     private float lastShootTime = 0;
     private int damage;
     private float fireInterval = 0.5f;
     private Vector3 bulletSpreadVariance = Vector3.zero;
     private bool addBulletSpread = true;
-    private int currentClip = 0;
+    public int currentClip = 0;
     bool reloading = false;
 
     private void Awake()
     {
         //assign stats
+        cam = Camera.main;
         damage = weaponStats.damage;
         fireInterval = weaponStats.fireInterval;
         bulletSpreadVariance = weaponStats.bulletSpreadVariance;
@@ -38,6 +40,7 @@ public class RaycastWeapon : MonoBehaviour
         tracerEffect = weaponStats.tracerEffect;
 
         currentClip = weaponStats.clipSize;
+        weaponUI = GetComponentInChildren<WeaponUI>();
     }
 
     public virtual void Fire()
@@ -97,8 +100,10 @@ public class RaycastWeapon : MonoBehaviour
 
     IEnumerator ReloadSequence()
     {
+        weaponUI.ActiveReloadUI();
         yield return new WaitForSeconds(weaponStats.reloadTime);
         currentClip = weaponStats.clipSize;
         reloading = false;
+        weaponUI.DeactiveReloadUI();
     }
 }

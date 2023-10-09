@@ -97,18 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e94bd2d33506c48bb6380aae71d803, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
   agent: {fileID: 0}
-  addBulletSpread: 1
-  bulletSpreadVariance: {x: 0, y: 0, z: 0}
-  fireInterval: 0.5
+  weaponStats: {fileID: 11400000, guid: b9795f3478d2ff849a683ffd461d4739, type: 2}
   muzzle: {fileID: 3834682911324083765}
-  impactEffect: {fileID: 0}
   muzzleFlash:
   - {fileID: 716082422086916751}
   - {fileID: 5456730533562769718}
-  tracerEffect: {fileID: 2285814988089174163, guid: ebc14e889965af642abfa38a12de4ea8,
-    type: 3}
 --- !u!1 &2382317187309815422
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,10 +21,15 @@ public class EnemyGunAgent : AiAgent
     public float attackRange = 5f;
     public float attackStopRange = 3f;
 
+    public GameObject weaponPrefab;
+    GameObject weaponObj;
+    public GameObject weaponSlot;
+
     public override void Awake()
     {
         base.Awake();
-        weapon = GetComponentInChildren<EnemyRaycastWeapon>();
+        weaponObj = Instantiate(weaponPrefab, weaponSlot.transform.position, weaponSlot.transform.rotation, weaponSlot.transform);
+        weapon = weaponObj.GetComponent<EnemyRaycastWeapon>();
         playerObj = FindObjectOfType<PlayerLocomotion>().gameObject;
     }
 

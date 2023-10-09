@@ -9,7 +9,10 @@ public class BasicHealthManager : MonoBehaviour
     public bool isDead { get; private set; }
 
     public float regenerateRate = 0f;
-    
+
+    [Tooltip("For Testing Purpose")]
+    public bool isInvincible = false;
+
     public virtual void Start()
     {
         health = maxHealth;
@@ -23,8 +26,9 @@ public class BasicHealthManager : MonoBehaviour
             Death();
         }
     }
-    public virtual void Death() { Destroy(gameObject); }
-    public virtual void TakeDamage(int damage) { 
+    public virtual void Death() {}
+    public virtual void TakeDamage(int damage) {
+        if (isInvincible) return;
         Debug.Log(gameObject.name + "Taking Damage of " + damage);
         health -= damage;
     }

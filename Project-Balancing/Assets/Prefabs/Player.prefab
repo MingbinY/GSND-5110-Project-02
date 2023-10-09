@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 8401789864167249794}
   - component: {fileID: 1432678371045034336}
   - component: {fileID: 8797831361989784388}
-  - component: {fileID: 6478177910789210985}
+  - component: {fileID: 2587535709250300962}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -363,7 +363,7 @@ MonoBehaviour:
   locomotion: {fileID: 0}
   look: {fileID: 0}
   weaponSlot: {fileID: 0}
---- !u!114 &6478177910789210985
+--- !u!114 &2587535709250300962
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,12 +372,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7629846076682424255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb8f7fa2de7c1a4ea63e61289c53f4c, type: 3}
+  m_Script: {fileID: 11500000, guid: bed8f67c1b519804cbe22114a5a5e4a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
   regenerateRate: 0
+  isInvincible: 0
 --- !u!1 &8524913405299425847
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,6 +445,17 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 7273265239541531203}
+    - target: {fileID: 2680259012609001572, guid: 46e6a7eaa7a8aff45bc4552673b4d504,
+        type: 3}
+      propertyPath: weaponStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 55923ed904709044d83f5510597af430,
+        type: 2}
+    - target: {fileID: 2680259012609001572, guid: 46e6a7eaa7a8aff45bc4552673b4d504,
+        type: 3}
+      propertyPath: muzzleFlash.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5871431087669967381, guid: 46e6a7eaa7a8aff45bc4552673b4d504,
         type: 3}
       propertyPath: m_Name
@@ -500,7 +512,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 375870215296029672, guid: 46e6a7eaa7a8aff45bc4552673b4d504, type: 3}
+    - {fileID: 7984695236441208215, guid: 46e6a7eaa7a8aff45bc4552673b4d504, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46e6a7eaa7a8aff45bc4552673b4d504, type: 3}

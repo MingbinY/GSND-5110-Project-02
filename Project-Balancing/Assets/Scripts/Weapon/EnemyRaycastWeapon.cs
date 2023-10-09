@@ -20,7 +20,7 @@ public class EnemyRaycastWeapon : MonoBehaviour
     private bool addBulletSpread = true;
     bool reloading = false;
 
-    private void Awake()
+    private void Start()
     {
         agent = GetComponentInParent<AiAgent>().gameObject;
 
@@ -50,6 +50,8 @@ public class EnemyRaycastWeapon : MonoBehaviour
         RaycastHit hit;
         Vector3 fwd = agent.transform.forward;
         fwd = fwd + agent.transform.TransformDirection(new Vector3(Random.Range(-bulletSpreadVariance.x, bulletSpreadVariance.x), Random.Range(-bulletSpreadVariance.y, bulletSpreadVariance.y), Random.Range(-bulletSpreadVariance.z, bulletSpreadVariance.z)));
+        if (!addBulletSpread)
+            fwd = agent.transform.forward;
         if (Physics.Raycast(agent.transform.position, fwd, out hit)) // player aim at something
         {
             GameObject objectHit = hit.collider.gameObject;
