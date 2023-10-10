@@ -9,7 +9,7 @@ public class WeaponStats : ScriptableObject
     public int clipSize = 30;
     public float fireInterval = 0.2f;
     public float reloadTime = 3f;
-    public Vector3 bulletSpreadVariance = Vector3.zero;
+    public Vector3 recoil = Vector3.zero;
 
     public List<ParticleSystem> muzzleFlash;
 

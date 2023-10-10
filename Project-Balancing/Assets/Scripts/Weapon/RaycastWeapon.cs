@@ -8,17 +8,18 @@ public class RaycastWeapon : MonoBehaviour
     public WeaponStats weaponStats;
     public Camera cam;
     public Transform muzzle;
+    public Recoil recoilScript;
 
     private ParticleSystem impactEffect;
     [SerializeField] private List<ParticleSystem> muzzleFlash;
     private TrailRenderer tracerEffect;
-    WeaponUI weaponUI;
+    WeaponClipUI weaponUI;
 
     private float lastShootTime = 0;
     private int damage;
     private float fireInterval = 0.5f;
-    private Vector3 bulletSpreadVariance = Vector3.zero;
-    private bool addBulletSpread = true;
+    private Vector3 recoil = Vector3.zero;
+    private bool hasRecoil = true;
     public int currentClip = 0;
     bool reloading = false;
 
@@ -28,8 +29,9 @@ public class RaycastWeapon : MonoBehaviour
         cam = Camera.main;
         damage = weaponStats.damage;
         fireInterval = weaponStats.fireInterval;
-        bulletSpreadVariance = weaponStats.bulletSpreadVariance;
-        addBulletSpread = weaponStats.addBulletSpread;
+        recoil = weaponStats.recoil;
+        hasRecoil = weaponStats.addBulletSpread;
+        recoilScript = GetComponentInParent<Recoil>();
 
         foreach (ParticleSystem particle in weaponStats.muzzleFlash)
         {
@@ -40,7 +42,7 @@ public class RaycastWeapon : MonoBehaviour
         tracerEffect = weaponStats.tracerEffect;
 
         currentClip = weaponStats.clipSize;
-        weaponUI = GetComponentInChildren<WeaponUI>();
+        weaponUI = GetComponentInChildren<WeaponClipUI>();
     }
 
     public virtual void Fire()
@@ -56,9 +58,7 @@ public class RaycastWeapon : MonoBehaviour
 
         RaycastHit hit;
         Vector3 fwd = cam.transform.forward;
-        fwd = fwd + cam.transform.TransformDirection(new Vector3(Random.Range(-bulletSpreadVariance.x, bulletSpreadVariance.x), Random.Range(-bulletSpreadVariance.y, bulletSpreadVariance.y), Random.Range(-bulletSpreadVariance.z, bulletSpreadVariance.z)));
-        if (!addBulletSpread)
-            fwd = cam.transform.forward;
+        if (hasRecoil) recoilScript.RecoilFire(recoil);
         if (Physics.Raycast(cam.transform.position, fwd, out hit)) // player aim at something
         {
             GameObject objectHit = hit.collider.gameObject;

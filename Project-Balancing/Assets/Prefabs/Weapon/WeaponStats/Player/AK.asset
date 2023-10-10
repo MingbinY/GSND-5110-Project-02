@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   clipSize: 30
-  fireInterval: 0.2
+  fireInterval: 0.05
   reloadTime: 3
-  bulletSpreadVariance: {x: 0, y: 0.4, z: 0}
+  recoil: {x: -2, y: 2, z: 0.35}
   muzzleFlash:
   - {fileID: 6987958112388960258, guid: afe28ac3687c030489c525abe1a25b61, type: 3}
   - {fileID: 5054140552950944, guid: cd40b11d00f8be04db05b86cabf499da, type: 3}

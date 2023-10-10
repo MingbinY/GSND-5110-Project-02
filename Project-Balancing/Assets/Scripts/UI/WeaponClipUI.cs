@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class WeaponUI : MonoBehaviour
+public class WeaponClipUI : MonoBehaviour
 {
-    RaycastWeapon weapon;
+    public RaycastWeapon weapon { get; private set; }
     [SerializeField] GameObject clipUI;
     [SerializeField] GameObject reloadUI;
 

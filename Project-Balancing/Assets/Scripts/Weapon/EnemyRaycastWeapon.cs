@@ -26,7 +26,7 @@ public class EnemyRaycastWeapon : MonoBehaviour
 
         damage = weaponStats.damage;
         fireInterval = weaponStats.fireInterval;
-        bulletSpreadVariance = weaponStats.bulletSpreadVariance;
+        bulletSpreadVariance = weaponStats.recoil;
         addBulletSpread = weaponStats.addBulletSpread;
 
         foreach (ParticleSystem particle in weaponStats.muzzleFlash)
