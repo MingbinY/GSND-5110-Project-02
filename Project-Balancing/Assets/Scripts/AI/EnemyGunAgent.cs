@@ -52,7 +52,7 @@ public class EnemyGunAgent : AiAgent
 
     void IdleUpdate()
     {
-        if (DistanceToPlayer() < detectionRange)
+        if (DistanceToPlayer() < detectionRange && CanSeePlayer())
         {
             currentState = GunEnemyState.chase;
             return;
@@ -62,7 +62,7 @@ public class EnemyGunAgent : AiAgent
     void ChaseUpdate()
     {
         navMeshAgent.stoppingDistance = 0;
-        if (DistanceToPlayer() < attackRange)
+        if (DistanceToPlayer() < attackRange && CanSeePlayer())
         {
             currentState = GunEnemyState.attack;
             return;
@@ -84,6 +84,11 @@ public class EnemyGunAgent : AiAgent
             currentState = GunEnemyState.chase;
             return;
         }
+        if (!CanSeePlayer())
+        {
+            currentState = GunEnemyState.chase;
+            return;
+        }
         FacePlayer();
         weapon.Fire();
     }
@@ -96,5 +101,19 @@ public class EnemyGunAgent : AiAgent
     void FacePlayer()
     {
         transform.LookAt(playerObj.transform.position);
+    }
+
+    bool CanSeePlayer()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, playerObj.transform.position - transform.position, out hit))
+        {
+            if (hit.collider.gameObject == playerObj)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -1341,12 +1341,12 @@ PrefabInstance:
         type: 3}
       propertyPath: maxClipText
       value: 
-      objectReference: {fileID: 1858435141}
+      objectReference: {fileID: 0}
     - target: {fileID: 4002385945201594279, guid: 46e6a7eaa7a8aff45bc4552673b4d504,
         type: 3}
       propertyPath: currentClipText
       value: 
-      objectReference: {fileID: 1775875752}
+      objectReference: {fileID: 0}
     - target: {fileID: 5871431087669967381, guid: 46e6a7eaa7a8aff45bc4552673b4d504,
         type: 3}
       propertyPath: m_Name
@@ -2897,30 +2897,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663709884}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1775875752 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8839712948830423953, guid: 46e6a7eaa7a8aff45bc4552673b4d504,
-    type: 3}
-  m_PrefabInstance: {fileID: 717053070}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1858435141 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 968499335304715236, guid: 46e6a7eaa7a8aff45bc4552673b4d504,
-    type: 3}
-  m_PrefabInstance: {fileID: 717053070}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1868322450
 GameObject:
   m_ObjectHideFlags: 0
@@ -4061,6 +4037,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2587535709250300962, guid: 1bbb9b616892e6247aa3421063846465,
+        type: 3}
+      propertyPath: isInvincible
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7629846076682424255, guid: 1bbb9b616892e6247aa3421063846465,
         type: 3}
