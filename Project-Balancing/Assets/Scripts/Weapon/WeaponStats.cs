@@ -17,4 +17,6 @@ public class WeaponStats : ScriptableObject
     public bool addBulletSpread = true;
 
     public Vector3 weaponOffset = Vector3.zero;
+
+    public AudioClip weaponSound;
 }

@@ -15,6 +15,7 @@ public class RaycastWeapon : MonoBehaviour
     [SerializeField] private List<ParticleSystem> muzzleFlash;
     private TrailRenderer tracerEffect;
     WeaponClipUI weaponUI;
+    AudioSource weaponAudioSource;
 
     private float lastShootTime = 0;
     private int damage;
@@ -35,6 +36,7 @@ public class RaycastWeapon : MonoBehaviour
         recoil = weaponStats.recoil;
         hasRecoil = weaponStats.addBulletSpread;
         recoilScript = GetComponentInParent<Recoil>();
+        weaponAudioSource = GetComponent<AudioSource>();
 
         foreach (ParticleSystem particle in weaponStats.muzzleFlash)
         {
@@ -58,6 +60,10 @@ public class RaycastWeapon : MonoBehaviour
         foreach (var particle in muzzleFlash) particle.Emit(1);
         var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
         tracer.AddPosition(muzzle.position);
+
+        //Gun SFX
+        if (weaponAudioSource)
+            weaponAudioSource.PlayOneShot(weaponStats.weaponSound);
 
         RaycastHit hit;
         Vector3 fwd = cam.transform.forward;
