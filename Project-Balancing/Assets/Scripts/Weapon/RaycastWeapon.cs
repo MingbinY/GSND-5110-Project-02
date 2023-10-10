@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RaycastWeapon : MonoBehaviour
 {
@@ -86,7 +87,13 @@ public class RaycastWeapon : MonoBehaviour
             }
         }
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R) && !reloading)
+        {
+            Reload();
+        }
+    }
     void Reload()
     {
         if (currentClip == weaponStats.clipSize) return;
