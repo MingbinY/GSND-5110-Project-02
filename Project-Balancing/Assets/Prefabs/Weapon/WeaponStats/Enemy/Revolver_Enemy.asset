@@ -15,10 +15,13 @@ MonoBehaviour:
   damage: 10
   clipSize: 30
   fireInterval: 0.2
-  bulletSpreadVariance: {x: 0, y: 0, z: 0}
+  reloadTime: 3
+  recoil: {x: 0, y: 0, z: 0}
   muzzleFlash:
   - {fileID: 6987958112388960258, guid: afe28ac3687c030489c525abe1a25b61, type: 3}
   - {fileID: 5054140552950944, guid: cd40b11d00f8be04db05b86cabf499da, type: 3}
   tracerEffect: {fileID: 2285814988089174163, guid: 9c66af69c3c7ae141ac83a7581058593,
     type: 3}
   addBulletSpread: 1
+  weaponOffset: {x: 0, y: 0, z: 0}
+  weaponSound: {fileID: 8300000, guid: 07ab47477851cfa4da79fe4dad46220e, type: 3}

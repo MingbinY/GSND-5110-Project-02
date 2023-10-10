@@ -24,4 +24,4 @@ MonoBehaviour:
     type: 3}
   addBulletSpread: 1
   weaponOffset: {x: 0, y: 0, z: 0.5}
-  weaponSound: {fileID: 8300000, guid: 250fc02987820c346bb921a73f1ec2dc, type: 3}
+  weaponSound: {fileID: 8300000, guid: 07ab47477851cfa4da79fe4dad46220e, type: 3}
