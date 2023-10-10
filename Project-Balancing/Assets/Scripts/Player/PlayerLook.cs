@@ -13,6 +13,12 @@ public class PlayerLook : MonoBehaviour
     public Transform raycastHitTransform;
     RaycastHit hit;
 
+    private void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
     public void HandleLook(Vector2 input)
     {
         float mouseX = input.x;

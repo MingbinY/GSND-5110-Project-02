@@ -101,10 +101,10 @@ MonoBehaviour:
   weaponStats: {fileID: 11400000, guid: 55923ed904709044d83f5510597af430, type: 2}
   cam: {fileID: 0}
   muzzle: {fileID: 86277899549007754}
-  muzzleFlash:
-  - {fileID: 3724478955207510694}
-  - {fileID: 2414735171639587385}
+  recoilScript: {fileID: 0}
+  muzzleFlash: []
   currentClip: 0
+  isPrimary: 1
 --- !u!1001 &1127122515392938026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -169,25 +169,15 @@ PrefabInstance:
       value: muzzle
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 761966010118558658, guid: 68ea5cb4f09cb5c4785cf725be434841, type: 3}
+    - {fileID: 7019706608775312829, guid: 68ea5cb4f09cb5c4785cf725be434841, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ea5cb4f09cb5c4785cf725be434841, type: 3}
 --- !u!4 &86277899549007754 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1051259278113021856, guid: 68ea5cb4f09cb5c4785cf725be434841,
-    type: 3}
-  m_PrefabInstance: {fileID: 1127122515392938026}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2414735171639587385 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3325498400122565139, guid: 68ea5cb4f09cb5c4785cf725be434841,
-    type: 3}
-  m_PrefabInstance: {fileID: 1127122515392938026}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &3724478955207510694 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 4329179789313739404, guid: 68ea5cb4f09cb5c4785cf725be434841,
     type: 3}
   m_PrefabInstance: {fileID: 1127122515392938026}
   m_PrefabAsset: {fileID: 0}

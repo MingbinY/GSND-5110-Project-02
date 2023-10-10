@@ -12,13 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7363e8c58e71afc47808bc4968c30759, type: 3}
   m_Name: AUG
   m_EditorClassIdentifier: 
-  damage: 10
-  clipSize: 30
+  damage: 5
+  clipSize: 20
   fireInterval: 0.2
-  bulletSpreadVariance: {x: 0, y: 0, z: 0}
+  reloadTime: 2
+  recoil: {x: -2, y: 2, z: 0.1}
   muzzleFlash:
   - {fileID: 6987958112388960258, guid: afe28ac3687c030489c525abe1a25b61, type: 3}
   - {fileID: 5054140552950944, guid: cd40b11d00f8be04db05b86cabf499da, type: 3}
   tracerEffect: {fileID: 2285814988089174163, guid: 9c66af69c3c7ae141ac83a7581058593,
     type: 3}
   addBulletSpread: 1
+  weaponOffset: {x: 0, y: 0, z: 0}

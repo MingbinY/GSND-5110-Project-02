@@ -24,6 +24,8 @@ public class RaycastWeapon : MonoBehaviour
     public int currentClip = 0;
     bool reloading = false;
 
+    public bool isPrimary = true;
+
     private void Awake()
     {
         //assign stats

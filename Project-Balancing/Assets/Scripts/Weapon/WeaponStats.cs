@@ -15,4 +15,6 @@ public class WeaponStats : ScriptableObject
 
     public TrailRenderer tracerEffect;
     public bool addBulletSpread = true;
+
+    public Vector3 weaponOffset = Vector3.zero;
 }
