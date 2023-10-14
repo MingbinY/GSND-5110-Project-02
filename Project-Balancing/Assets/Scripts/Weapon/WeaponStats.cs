@@ -19,4 +19,8 @@ public class WeaponStats : ScriptableObject
     public Vector3 weaponOffset = Vector3.zero;
 
     public AudioClip weaponSound;
+
+    [Header("Shotgun")]
+    public Vector3 bulletSpread = Vector3.zero;
+    public int pilletCount = 6;
 }

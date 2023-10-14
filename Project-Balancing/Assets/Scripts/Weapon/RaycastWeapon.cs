@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,7 +26,8 @@ public class RaycastWeapon : MonoBehaviour
     public int currentClip = 0;
     bool reloading = false;
 
-    public bool isPrimary = true;
+    [Header("Shotgun")]
+    public bool isShotgun = false;
 
     private void Awake()
     {
@@ -53,11 +55,13 @@ public class RaycastWeapon : MonoBehaviour
     public virtual void Fire()
     {
         //if (currentClip == 0) Reload();
+        
         if (Time.time < lastShootTime + fireInterval) return;
         if (currentClip < 1 || reloading) return;
         lastShootTime = Time.time;
         currentClip--;
         foreach (var particle in muzzleFlash) particle.Emit(1);
+        if (isShotgun) { ShotgunFire(); return; }
         var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
         tracer.AddPosition(muzzle.position);
 
@@ -95,11 +99,56 @@ public class RaycastWeapon : MonoBehaviour
             }
         }
     }
-    private void Update()
+    void ShotgunFire()
     {
-        //if (Input.GetKeyDown(KeyCode.R) && !reloading)
-        //{
-        //    Reload();
-        //}
+        int pillets = weaponStats.pilletCount;
+        Vector3 spread = weaponStats.bulletSpread;
+        Vector3 fwd = cam.transform.forward;
+        if (weaponAudioSource)
+            weaponAudioSource.PlayOneShot(weaponStats.weaponSound);
+
+        List<Vector3> directions = new List<Vector3>();
+        Vector3 lastDir = Vector3.zero;
+        for (int i = 0; i < pillets; i=i+2)
+        {
+            Vector3 newDir = new Vector3(lastDir.x + spread.x, lastDir.y + spread.y, lastDir.z + spread.z);
+            directions.Add(newDir);
+            newDir = newDir * -1;
+            directions.Add(newDir);
+        }
+        for (int i = 0; i < pillets; i++)
+        {
+            Vector3 thisDir = directions[i];
+            thisDir += fwd;
+            var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
+            tracer.AddPosition(muzzle.position);
+            RaycastHit hit;
+            if (Physics.Raycast(cam.transform.position, thisDir, out hit)) // check objects inside range
+            {
+                GameObject objectHit = hit.collider.gameObject;
+                //Generate tracer effect
+
+                tracer.transform.position = hit.point;
+                if (Physics.Raycast(muzzle.transform.position, objectHit.transform.position - muzzle.transform.position, out hit))
+                {
+                    //Actual object hit by weapon
+                    objectHit = hit.collider.gameObject;
+                    BasicHealthManager healthManager = objectHit.GetComponent<BasicHealthManager>();
+                    if (healthManager != null)
+                    {
+                        // hit someone with health
+                        healthManager.TakeDamage(damage);
+                    }
+
+                    //Generate hit effect
+                    if (impactEffect)
+                    {
+                        impactEffect.transform.position = hit.transform.position;
+                        impactEffect.transform.forward = hit.normal;
+                        impactEffect.Emit(1);
+                    }
+                }
+            }
+        }
     }
 }

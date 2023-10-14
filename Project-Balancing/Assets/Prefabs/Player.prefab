@@ -430,6 +430,7 @@ MonoBehaviour:
   playerManager: {fileID: 0}
   startingWeapons:
   - {fileID: 3786691775731841965, guid: d07683968c69127489cc9d926b7507a7, type: 3}
+  - {fileID: 5427118628507032583, guid: b4602cdc9db1b19489440fe05545ee1d, type: 3}
 --- !u!114 &8797831361989784388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,6 +463,7 @@ MonoBehaviour:
   health: 0
   regenerateRate: 0
   isInvincible: 1
+  armor: 100
 --- !u!114 &536186505258528101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -513,7 +515,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1342037822524969736}
-  - component: {fileID: 355091983441684439}
+  - component: {fileID: 2732158139783217110}
   m_Layer: 0
   m_Name: Virtual Target
   m_TagString: Untagged
@@ -530,14 +532,14 @@ Transform:
   m_GameObject: {fileID: 8524913405299425847}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 60}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7776463285077806465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &355091983441684439
-SphereCollider:
+--- !u!65 &2732158139783217110
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -555,5 +557,5 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 2
+  m_Size: {x: 100, y: 100, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerHealthManager : BasicHealthManager
 {
+    public int armor = 100;
     public override void Start()
     {
         base.Start();
@@ -21,6 +22,21 @@ public class PlayerHealthManager : BasicHealthManager
 
     public override void TakeDamage(int damage)
     {
-        base.TakeDamage(damage);
+        if (armor > damage)
+        {
+            armor -= damage;
+        }
+        else
+        {
+            damage -= armor;
+            armor = 0;
+            health -= damage;
+        }
+
+        if (health <= 0)
+        {
+            health = 0;
+            Death();
+        }
     }
 }

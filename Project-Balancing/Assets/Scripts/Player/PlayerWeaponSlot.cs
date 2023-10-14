@@ -10,6 +10,7 @@ public class PlayerWeaponSlot : MonoBehaviour
     public PlayerManager playerManager;
     public List<GameObject> startingWeapons;
     GameObject pistol;
+    GameObject shotgun;
     Vector3 weaponSlotOffset;
     
     bool isFiring = false;
@@ -19,11 +20,14 @@ public class PlayerWeaponSlot : MonoBehaviour
         weaponSlotOffset = weaponSlot.transform.localPosition;
         playerManager = GetComponent<PlayerManager>();
         pistol = Instantiate(startingWeapons[0], weaponSlot.transform.position, weaponSlot.transform.rotation, weaponSlot.transform);
-        EquipWeapon();
+        shotgun = Instantiate(startingWeapons[1], weaponSlot.transform.position, weaponSlot.transform.rotation, weaponSlot.transform);
+        EquipWeapon(0);
     }
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha2)) EquipWeapon(1);
+
         if (isFiring)
         {
             FireWeapon();
@@ -48,12 +52,23 @@ public class PlayerWeaponSlot : MonoBehaviour
         isFiring= false;
     }
 
-    public void EquipWeapon()
+    public void EquipWeapon(int index)
     {
         //secondaryWeapon.SetActive(false);
-        pistol.SetActive(true);
-        currentWeapon = pistol.GetComponent<RaycastWeapon>();
+        if (index == 0)
+        {
+            shotgun.SetActive(false);
+            pistol.SetActive(true);
+            currentWeapon = pistol.GetComponent<RaycastWeapon>();
+        }
 
+        if (index == 1)
+        {
+            shotgun.SetActive(true);
+            pistol.SetActive(false);
+            currentWeapon = shotgun.GetComponent<RaycastWeapon>();
+        }
+       
         weaponSlot.transform.localPosition = weaponSlotOffset + currentWeapon.weaponStats.weaponOffset;
     }
 }
