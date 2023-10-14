@@ -108,26 +108,33 @@ public class RaycastWeapon : MonoBehaviour
             weaponAudioSource.PlayOneShot(weaponStats.weaponSound);
 
         List<Vector3> directions = new List<Vector3>();
+        List<TrailRenderer> tracers = new List<TrailRenderer>();
         Vector3 lastDir = Vector3.zero;
         for (int i = 0; i < pillets; i=i+2)
         {
             Vector3 newDir = new Vector3(lastDir.x + spread.x, lastDir.y + spread.y, lastDir.z + spread.z);
             directions.Add(newDir);
+            var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
+            tracer.AddPosition(muzzle.position);
+            tracers.Add(tracer);
             newDir = newDir * -1;
             directions.Add(newDir);
+            tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
+            tracer.AddPosition(muzzle.position);
+            tracers.Add(tracer);
         }
+
         for (int i = 0; i < pillets; i++)
         {
             Vector3 thisDir = directions[i];
             thisDir += fwd;
-            var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
-            tracer.AddPosition(muzzle.position);
+            
             RaycastHit hit;
             if (Physics.Raycast(cam.transform.position, thisDir, out hit)) // check objects inside range
             {
                 GameObject objectHit = hit.collider.gameObject;
                 //Generate tracer effect
-
+                var tracer = tracers[i];
                 tracer.transform.position = hit.point;
                 if (Physics.Raycast(muzzle.transform.position, objectHit.transform.position - muzzle.transform.position, out hit))
                 {
