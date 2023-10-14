@@ -11,7 +11,6 @@ public class WeaponPickup : Pickup
         PlayerWeaponSlot weaponSlot = FindObjectOfType<PlayerWeaponSlot>();
         if (weaponSlot)
         {
-            weaponSlot.EquipWeapon(weapon);
         }
     }
 }

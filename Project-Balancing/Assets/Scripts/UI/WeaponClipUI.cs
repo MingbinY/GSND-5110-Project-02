@@ -10,14 +10,11 @@ public class WeaponClipUI : MonoBehaviour
     [SerializeField] GameObject reloadUI;
 
     public TMP_Text currentClipText;
-    public TMP_Text maxClipText;
 
     private void Start()
     {
         weapon = GetComponentInParent<RaycastWeapon>();
-        if (!clipUI || !reloadUI || !currentClipText || !maxClipText) Destroy(gameObject);
-
-        maxClipText.text = weapon.weaponStats.clipSize.ToString();
+        if (!clipUI || !currentClipText) Destroy(gameObject);
     }
     private void Update()
     {

@@ -164,7 +164,7 @@ Transform:
   m_GameObject: {fileID: 1699224703194063224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -0.6, z: 0.5}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -268,6 +268,7 @@ GameObject:
   - component: {fileID: 8797831361989784388}
   - component: {fileID: 2587535709250300962}
   - component: {fileID: 536186505258528101}
+  - component: {fileID: 3466553325094565258}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -427,8 +428,7 @@ MonoBehaviour:
   weaponSlot: {fileID: 1699224703194063224}
   currentWeapon: {fileID: 0}
   playerManager: {fileID: 0}
-  weapons:
-  - {fileID: 5871431087669967381, guid: 46e6a7eaa7a8aff45bc4552673b4d504, type: 3}
+  startingWeapons:
   - {fileID: 3786691775731841965, guid: d07683968c69127489cc9d926b7507a7, type: 3}
 --- !u!114 &8797831361989784388
 MonoBehaviour:
@@ -481,6 +481,29 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!136 &3466553325094565258
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7629846076682424255}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8524913405299425847
 GameObject:
   m_ObjectHideFlags: 0

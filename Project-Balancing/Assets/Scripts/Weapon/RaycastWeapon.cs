@@ -46,13 +46,13 @@ public class RaycastWeapon : MonoBehaviour
 
         tracerEffect = weaponStats.tracerEffect;
 
-        currentClip = weaponStats.clipSize;
+        currentClip = weaponStats.startClipSize;
         weaponUI = GetComponentInChildren<WeaponClipUI>();
     }
 
     public virtual void Fire()
     {
-        if (currentClip == 0) Reload();
+        //if (currentClip == 0) Reload();
         if (Time.time < lastShootTime + fireInterval) return;
         if (currentClip < 1 || reloading) return;
         lastShootTime = Time.time;
@@ -97,28 +97,9 @@ public class RaycastWeapon : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R) && !reloading)
-        {
-            Reload();
-        }
-    }
-    void Reload()
-    {
-        if (currentClip == weaponStats.clipSize) return;
-        if (reloading) return;
-        else
-        {
-            reloading = true;
-            StartCoroutine(ReloadSequence());
-        }
-    }
-
-    IEnumerator ReloadSequence()
-    {
-        weaponUI.ActiveReloadUI();
-        yield return new WaitForSeconds(weaponStats.reloadTime);
-        currentClip = weaponStats.clipSize;
-        reloading = false;
-        weaponUI.DeactiveReloadUI();
+        //if (Input.GetKeyDown(KeyCode.R) && !reloading)
+        //{
+        //    Reload();
+        //}
     }
 }

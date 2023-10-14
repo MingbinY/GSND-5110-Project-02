@@ -6,7 +6,7 @@ using UnityEngine;
 public class WeaponStats : ScriptableObject
 {
     public int damage = 10;
-    public int clipSize = 30;
+    public int startClipSize = 30;
     public float fireInterval = 0.2f;
     public float reloadTime = 3f;
     public Vector3 recoil = Vector3.zero;

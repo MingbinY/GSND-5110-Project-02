@@ -8,6 +8,7 @@ public class EnemyRaycastWeapon : MonoBehaviour
 
     public WeaponStats weaponStats;
     public Transform muzzle;
+    AudioSource weaponAudioSource;
 
     private ParticleSystem impactEffect;
     [SerializeField] private List<ParticleSystem> muzzleFlash;
@@ -20,7 +21,7 @@ public class EnemyRaycastWeapon : MonoBehaviour
     private bool addBulletSpread = true;
     bool reloading = false;
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponentInParent<AiAgent>().gameObject;
 
@@ -28,6 +29,7 @@ public class EnemyRaycastWeapon : MonoBehaviour
         fireInterval = weaponStats.fireInterval;
         bulletSpreadVariance = weaponStats.recoil;
         addBulletSpread = weaponStats.addBulletSpread;
+        weaponAudioSource = GetComponent<AudioSource>();
 
         foreach (ParticleSystem particle in weaponStats.muzzleFlash)
         {
@@ -46,6 +48,9 @@ public class EnemyRaycastWeapon : MonoBehaviour
         foreach (var particle in muzzleFlash) particle.Emit(1);
         var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
         tracer.AddPosition(muzzle.position);
+
+        if (weaponAudioSource)
+            weaponAudioSource.PlayOneShot(weaponStats.weaponSound);
 
         RaycastHit hit;
         Vector3 fwd = agent.transform.forward;
