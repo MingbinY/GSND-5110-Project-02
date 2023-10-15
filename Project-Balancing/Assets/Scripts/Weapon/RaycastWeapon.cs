@@ -109,19 +109,15 @@ public class RaycastWeapon : MonoBehaviour
 
         List<Vector3> directions = new List<Vector3>();
         List<TrailRenderer> tracers = new List<TrailRenderer>();
-        Vector3 lastDir = Vector3.zero;
-        for (int i = 0; i < pillets; i=i+2)
+
+        for (int i = 0; i < pillets; i++)
         {
-            Vector3 newDir = new Vector3(lastDir.x + spread.x, lastDir.y + spread.y, lastDir.z + spread.z);
+            Vector3 newDir = new Vector3
+                (Random.Range(-weaponStats.bulletSpread.x, weaponStats.bulletSpread.x), Random.Range(-weaponStats.bulletSpread.y, weaponStats.bulletSpread.y), Random.Range(-weaponStats.bulletSpread.z, weaponStats.bulletSpread.z));
             directions.Add(newDir);
-            var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
-            tracer.AddPosition(muzzle.position);
-            tracers.Add(tracer);
-            newDir = newDir * -1;
-            directions.Add(newDir);
-            tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
-            tracer.AddPosition(muzzle.position);
-            tracers.Add(tracer);
+            var newTracer = Instantiate(tracerEffect, muzzle);
+            newTracer.AddPosition(muzzle.transform.position);
+            tracers.Add(newTracer);
         }
 
         for (int i = 0; i < pillets; i++)
