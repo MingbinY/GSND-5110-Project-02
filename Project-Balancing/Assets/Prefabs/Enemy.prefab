@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialState: 0
   detectionRange: 15
-  sightRange: 10
+  sightRange: 15
   attackRange: 5
   attackStopRange: 3
   weaponPrefab: {fileID: 3786691775731841965, guid: d7d6d0111c57cc04a985186ae6d7ece7,
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73f2422c95bbe7f4c80d49ec4b862026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 20
   health: 0
   regenerateRate: 0
   isInvincible: 0
