@@ -15,14 +15,21 @@ public class Door : MonoBehaviour
 
     bool isOpen = false;
     [SerializeField] float moveSpeed = 1f;
+
+    MeshRenderer renderer;
+    public Material unlockedMat;
+    public Material lockedMat;
+
     private void Awake()
     {
+        renderer = movingPart.GetComponent<MeshRenderer>();
         closePosition = movingPart.transform.localPosition;
         closeRotation = movingPart.transform.rotation;
     }
 
     private void Update()
     {
+        renderer.material = isLocked ? lockedMat : unlockedMat;
        if (isOpen)
         {
             movingPart.transform.localPosition = Vector3.Lerp(movingPart.transform.localPosition, openPosition, moveSpeed * Time.deltaTime);

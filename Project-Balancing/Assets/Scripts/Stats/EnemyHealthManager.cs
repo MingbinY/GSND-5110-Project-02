@@ -17,7 +17,7 @@ public class EnemyHealthManager : BasicHealthManager
     public override void Death()
     {
         base.Death();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 
     public override void TakeDamage(int damage)

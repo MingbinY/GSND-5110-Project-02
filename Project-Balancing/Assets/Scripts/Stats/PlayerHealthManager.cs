@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthManager : BasicHealthManager
 {
@@ -18,6 +19,7 @@ public class PlayerHealthManager : BasicHealthManager
     public override void Death()
     {
         base.Death();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public override void TakeDamage(int damage)
