@@ -15,6 +15,7 @@ public class EnemyRaycastWeapon : MonoBehaviour
     private TrailRenderer tracerEffect;
 
     private float lastShootTime = 0;
+    private float nextShootTime = 0;
     private int damage;
     private float fireInterval = 0.5f;
     private Vector3 bulletSpreadVariance = Vector3.zero;
@@ -30,6 +31,10 @@ public class EnemyRaycastWeapon : MonoBehaviour
         bulletSpreadVariance = weaponStats.recoil;
         addBulletSpread = weaponStats.addBulletSpread;
         weaponAudioSource = GetComponent<AudioSource>();
+        if (!weaponAudioSource)
+        {
+            weaponAudioSource = gameObject.AddComponent<AudioSource>();
+        }
 
         foreach (ParticleSystem particle in weaponStats.muzzleFlash)
         {
@@ -42,9 +47,10 @@ public class EnemyRaycastWeapon : MonoBehaviour
 
     public virtual void Fire()
     {
-        if (Time.time < lastShootTime + fireInterval) return;
+        if (Time.time < nextShootTime) return;
 
         lastShootTime = Time.time;
+        nextShootTime = lastShootTime + Random.Range(fireInterval / 3, fireInterval);
         foreach (var particle in muzzleFlash) particle.Emit(1);
         var tracer = Instantiate(tracerEffect, muzzle.position, Quaternion.identity);
         tracer.AddPosition(muzzle.position);

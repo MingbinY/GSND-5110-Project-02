@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthManager : BasicHealthManager
 {
+    public AudioClip deathSFX;
     public override void Start()
     {
         base.Start();

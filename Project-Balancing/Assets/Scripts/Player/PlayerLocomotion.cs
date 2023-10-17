@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-    private CharacterController characterController;
+    public CharacterController characterController;
     private Vector3 playerVelocity;
     public float walkSpeed = 5f;
     public float sprintSpeed = 8f;

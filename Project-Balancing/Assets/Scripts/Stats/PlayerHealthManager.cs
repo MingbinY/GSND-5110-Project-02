@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealthManager : BasicHealthManager
 {
     public int armor = 100;
+    public float armorDeductionRate = 0.5f;
+
     public override void Start()
     {
         base.Start();
@@ -24,14 +26,14 @@ public class PlayerHealthManager : BasicHealthManager
 
     public override void TakeDamage(int damage)
     {
-        if (armor > damage)
+        if (armor > 0)
         {
-            armor -= damage;
+            int sharedDamage = (int)(damage * armorDeductionRate);
+            armor -= sharedDamage;
+            health -= (damage - sharedDamage);
         }
         else
         {
-            damage -= armor;
-            armor = 0;
             health -= damage;
         }
 

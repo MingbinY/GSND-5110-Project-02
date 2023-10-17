@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7363e8c58e71afc47808bc4968c30759, type: 3}
   m_Name: Pistol_Enemy
   m_EditorClassIdentifier: 
-  damage: 10
-  clipSize: 30
-  fireInterval: 0.2
+  damage: 2
+  startClipSize: 30
+  fireInterval: 3
   reloadTime: 3
   recoil: {x: 0, y: 0, z: 0}
   muzzleFlash:
@@ -24,4 +24,6 @@ MonoBehaviour:
     type: 3}
   addBulletSpread: 1
   weaponOffset: {x: 0, y: 0, z: 0}
-  weaponSound: {fileID: 8300000, guid: ccc918100df601544ba0bb13049eb6f1, type: 3}
+  weaponSound: {fileID: 8300000, guid: 07ab47477851cfa4da79fe4dad46220e, type: 3}
+  bulletSpread: {x: 0, y: 0, z: 0}
+  pilletCount: 6
