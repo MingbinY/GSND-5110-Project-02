@@ -22,12 +22,12 @@ public class BasicHealthManager : MonoBehaviour
     {
         if (health <= 0)
         {
-            isDead = true;
             Death();
         }
     }
-    public virtual void Death() {}
+    public virtual void Death() { if (isDead) return; isDead = true; }
     public virtual void TakeDamage(int damage) {
+        if (isDead) return;
         if (isInvincible) return;
         Debug.Log(gameObject.name + "Taking Damage of " + damage);
         health -= damage;

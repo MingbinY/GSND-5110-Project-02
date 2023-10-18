@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class Elevator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public List<Transform> waypoints;
+    public float speed = 1f;
+    int currentInd = 0;
+    Vector3 currentTarget;
+
+    private void Update()
     {
-        
+        if (transform.position == currentTarget)
+        {
+            NextWaypoint();
+        }
+        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime); 
     }
 
-    // Update is called once per frame
-    void Update()
+    void NextWaypoint()
     {
-        
+        if (currentInd == waypoints.Count - 1)
+        {
+            currentInd = 0;
+        }
+        else
+        {
+            currentInd++;
+        }
+
+        currentTarget = waypoints[currentInd].position;
     }
 }

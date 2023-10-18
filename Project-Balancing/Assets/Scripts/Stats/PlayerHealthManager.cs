@@ -26,6 +26,8 @@ public class PlayerHealthManager : BasicHealthManager
 
     public override void TakeDamage(int damage)
     {
+        Debug.Log("Player take damage " + damage);
+        if (isInvincible) return;
         if (armor > 0)
         {
             int sharedDamage = (int)(damage * armorDeductionRate);
