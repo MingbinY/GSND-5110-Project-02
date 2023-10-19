@@ -6,14 +6,18 @@ public class Elevator : MonoBehaviour
 {
     public List<Transform> waypoints;
     public float speed = 1f;
+    public float waitTime = 2f;
     int currentInd = 0;
+    bool changingWaypoint=false;
     Vector3 currentTarget;
 
     private void Update()
     {
-        if (transform.position == currentTarget)
+        if (transform.position == currentTarget && !changingWaypoint)
         {
-            NextWaypoint();
+            changingWaypoint = true;
+            Invoke("NextWaypoint", waitTime);
+            return;
         }
         transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime); 
     }
@@ -30,5 +34,6 @@ public class Elevator : MonoBehaviour
         }
 
         currentTarget = waypoints[currentInd].position;
+        changingWaypoint = false;
     }
 }
