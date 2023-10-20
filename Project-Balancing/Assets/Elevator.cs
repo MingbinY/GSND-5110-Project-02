@@ -19,13 +19,13 @@ public class Elevator : MonoBehaviour
 
     private void Update()
     {
-        if (transform.localPosition == currentTarget && !changingWaypoint)
+        if (transform.position == currentTarget && !changingWaypoint)
         {
             changingWaypoint = true;
             Invoke("NextWaypoint", waitTime);
             return;
         }
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, currentTarget, speed * Time.deltaTime); 
+        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime); 
     }
 
     void NextWaypoint()
