@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2167676278156516857}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17ba99fff8bff0b4298b4a3a3cee9bc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
+  gameObjectToSpawn:
   - {fileID: 351525530884445588, guid: b9490cbb6ca4f044cb8d2f50a45494f6, type: 3}
   - {fileID: 7367978316305378264, guid: d45caba1df43d8f4eb2fcd32c15f7079, type: 3}
-  enemyIndex: 0
+  - {fileID: 8836574993080249040, guid: a7a85c2f848616846b428dbaf15af186, type: 3}
+  - {fileID: 8836574993080249040, guid: 86b958f458328734a9ea23fc6256419f, type: 3}
+  - {fileID: 1216069612850623042, guid: 63fb55cda74125d409d7648ace727493, type: 3}
+  - {fileID: 1216069612850623042, guid: 77f6ad3b6d1cc164e98cf2e6c74cf5be, type: 3}
+  - {fileID: 9024027840816204491, guid: 893a7b4e326df4d45a0ebcc74bffa1c3, type: 3}
+  - {fileID: 9024027840816204491, guid: 737b0beca6220434c948c1ec96b14ab6, type: 3}
+  - {fileID: 3571113278732383965, guid: 85f2ccac1a590f542b7792f26f0b5df0, type: 3}
+  objectIndex: 0

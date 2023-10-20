@@ -11,15 +11,21 @@ public class Elevator : MonoBehaviour
     bool changingWaypoint=false;
     Vector3 currentTarget;
 
+    private void Awake()
+    {
+        currentInd = 0;
+        currentTarget = waypoints[currentInd].position;
+    }
+
     private void Update()
     {
-        if (transform.position == currentTarget && !changingWaypoint)
+        if (transform.localPosition == currentTarget && !changingWaypoint)
         {
             changingWaypoint = true;
             Invoke("NextWaypoint", waitTime);
             return;
         }
-        transform.position = Vector3.MoveTowards(transform.position, currentTarget, speed * Time.deltaTime); 
+        transform.localPosition = Vector3.MoveTowards(transform.localPosition, currentTarget, speed * Time.deltaTime); 
     }
 
     void NextWaypoint()
