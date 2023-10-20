@@ -47,8 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eea34502f3e076429a2e0014434b4c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionVFX: {fileID: 0}
-  explosionSFX: {fileID: 0}
+  explosionVFX: {fileID: 100006, guid: e076683e0305e35498b8e8834978c0fa, type: 3}
+  explosionSFX: {fileID: 4499224777299459797, guid: f4ca07ce03021cc4c8300b0be847e199,
+    type: 3}
   explosionRadius: 5
   explosionDamage: 1
   onlyDamageAI: 0

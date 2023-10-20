@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealthManager : BasicHealthManager
 {
-    public AudioClip deathSFX;
+    public GameObject deathSFX;
     public override void Start()
     {
         base.Start();
@@ -18,11 +18,13 @@ public class EnemyHealthManager : BasicHealthManager
     public override void Death()
     {
         base.Death();
+        Instantiate(deathSFX, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
     }
 
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
+        BroadcastMessage("HitBlink");
     }
 }

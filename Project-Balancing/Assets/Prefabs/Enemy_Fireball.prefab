@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 8024011674632768911}
   - component: {fileID: 9219757931649401374}
   - component: {fileID: 4089616119035195411}
+  - component: {fileID: 2753871591740366102}
   m_Layer: 0
   m_Name: Enemy_Fireball
   m_TagString: Untagged
@@ -180,6 +181,8 @@ MonoBehaviour:
   health: 0
   regenerateRate: 0
   isInvincible: 0
+  deathSFX: {fileID: 4499224777299459797, guid: 7864b02756ec794419a087a5eba3f615,
+    type: 3}
 --- !u!114 &4089616119035195411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,3 +208,17 @@ MonoBehaviour:
   attackStopRange: 10
   attackInterval: 3
   lastAttackTime: 0
+--- !u!114 &2753871591740366102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7367978316305378264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ccb20b8267c9d4d8f3ad31b5614e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkIntensity: 10
+  blinkDuration: 0.2

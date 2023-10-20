@@ -177,6 +177,7 @@ MonoBehaviour:
   - {fileID: 3940135816442214124}
   - {fileID: 2991880008940170062}
   speed: 1
+  waitTime: 2
 --- !u!1 &8480236131628662282
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +240,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c435b5389d6b3f442afc7aa773d932f0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

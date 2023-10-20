@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4773461549887196845}
   - component: {fileID: 3273752919678185050}
   - component: {fileID: 4915226579711720645}
+  - component: {fileID: 577099210281930840}
   m_Layer: 0
   m_Name: Enemy_Gun
   m_TagString: Untagged
@@ -169,6 +170,22 @@ MonoBehaviour:
   health: 0
   regenerateRate: 0
   isInvincible: 0
+  deathSFX: {fileID: 4499224777299459797, guid: 7864b02756ec794419a087a5eba3f615,
+    type: 3}
+--- !u!114 &577099210281930840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351525530884445588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ccb20b8267c9d4d8f3ad31b5614e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkIntensity: 10
+  blinkDuration: 0.2
 --- !u!1 &1898110761943826048
 GameObject:
   m_ObjectHideFlags: 0
