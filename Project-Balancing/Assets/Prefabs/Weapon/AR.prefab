@@ -5003,7 +5003,7 @@ MonoBehaviour:
   recoilScript: {fileID: 0}
   rayIgnoreLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   muzzleFlash:
   - {fileID: 5702323383529666230}
   - {fileID: 2872293651610580684}

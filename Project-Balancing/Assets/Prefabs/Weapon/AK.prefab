@@ -105,7 +105,7 @@ MonoBehaviour:
   recoilScript: {fileID: 0}
   rayIgnoreLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 384
   muzzleFlash: []
   currentClip: 0
   isShotgun: 0

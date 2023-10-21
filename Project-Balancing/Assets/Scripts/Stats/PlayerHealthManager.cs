@@ -44,7 +44,10 @@ public class PlayerHealthManager : BasicHealthManager
         {
             health -= damage;
         }
-
+        if (armor < 0)
+        {
+            armor = 0;
+        }
         if (health <= 0)
         {
             health = 0;
