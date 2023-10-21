@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4227501337725852046}
   - component: {fileID: 4566149575410430448}
   - component: {fileID: 5420730072385258119}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1264938121363870178}
   - component: {fileID: 3636097963274494822}
   - component: {fileID: 6032723003358438223}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 2278188980778331391}
   - component: {fileID: 5469923267528859857}
   - component: {fileID: 7807421072889870073}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ GameObject:
   - component: {fileID: 3034503481810383858}
   - component: {fileID: 4310038227369818856}
   - component: {fileID: 7615231695774168005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 5495705769068207833}
   - component: {fileID: 5083681269697301948}
   - component: {fileID: 5686573652828982601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Door_moving
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 1504428461564469493}
   - component: {fileID: 6861146827260694572}
   - component: {fileID: 7796847215518510144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
