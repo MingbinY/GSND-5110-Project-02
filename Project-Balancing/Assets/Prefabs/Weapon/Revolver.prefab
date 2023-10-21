@@ -103,11 +103,14 @@ MonoBehaviour:
   cam: {fileID: 0}
   muzzle: {fileID: 3834682911324083765}
   recoilScript: {fileID: 0}
+  rayIgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 128
   muzzleFlash:
   - {fileID: 5791460518181460344, guid: d07683968c69127489cc9d926b7507a7, type: 3}
   - {fileID: 6705439598881568836, guid: d07683968c69127489cc9d926b7507a7, type: 3}
   currentClip: 0
-  isPrimary: 0
+  isShotgun: 0
 --- !u!82 &3897184105109994739
 AudioSource:
   m_ObjectHideFlags: 0

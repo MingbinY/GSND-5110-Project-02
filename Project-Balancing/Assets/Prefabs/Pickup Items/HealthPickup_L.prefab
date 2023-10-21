@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1031741424496474433}
   - component: {fileID: 307162864227813989}
   - component: {fileID: 7490522825497228188}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: first-aid kit (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 2884617228465997184}
   - component: {fileID: 5782056102224525343}
   - component: {fileID: 385547143067870267}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: first-aid kit (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - component: {fileID: 5911629366916205036}
   - component: {fileID: 1821000476035737217}
   - component: {fileID: 7888914879250578339}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: first-aid kit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ Transform:
   m_GameObject: {fileID: 5542258723533145653}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6767093371853778253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HealthPickup_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}

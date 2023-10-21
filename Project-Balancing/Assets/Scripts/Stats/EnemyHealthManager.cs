@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyHealthManager : BasicHealthManager
 {
     public GameObject deathSFX;
+    public GameObject ammoDrop;
     public override void Start()
     {
         base.Start();
@@ -18,7 +19,8 @@ public class EnemyHealthManager : BasicHealthManager
     public override void Death()
     {
         base.Death();
-        Instantiate(deathSFX, transform.position, Quaternion.identity);
+        if(deathSFX) Instantiate(deathSFX, transform.position, Quaternion.identity);
+        if (ammoDrop) Instantiate(ammoDrop, new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), Quaternion.identity);
         gameObject.SetActive(false);
     }
 

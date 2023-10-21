@@ -10,6 +10,7 @@ public class HitReaction : MonoBehaviour
     public float blinkIntensity;
     public float blinkDuration;
     float blinkTimer;
+
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();

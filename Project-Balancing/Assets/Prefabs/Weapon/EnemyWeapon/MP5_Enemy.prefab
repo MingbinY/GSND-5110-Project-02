@@ -9927,6 +9927,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 0}
+  rayIgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 128
   weaponStats: {fileID: 11400000, guid: 3bde1f69145407643b2a1315f7cfdb05, type: 2}
   muzzle: {fileID: 4725606277825910305}
   muzzleFlash:

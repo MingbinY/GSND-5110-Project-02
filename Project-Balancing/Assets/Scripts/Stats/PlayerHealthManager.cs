@@ -8,9 +8,13 @@ public class PlayerHealthManager : BasicHealthManager
     public int armor = 100;
     public float armorDeductionRate = 0.5f;
 
+    public AudioClip hurtClip;
+    AudioSource audioSource;
+
     public override void Start()
     {
         base.Start();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public override void Update()
@@ -27,6 +31,8 @@ public class PlayerHealthManager : BasicHealthManager
     public override void TakeDamage(int damage)
     {
         Debug.Log("Player take damage " + damage);
+        BroadcastMessage("PlayerHitReaction");
+        if (hurtClip && audioSource) audioSource.PlayOneShot(hurtClip);
         if (isInvincible) return;
         if (armor > 0)
         {

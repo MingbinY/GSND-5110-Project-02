@@ -5001,11 +5001,14 @@ MonoBehaviour:
   cam: {fileID: 0}
   muzzle: {fileID: 880184119889095785}
   recoilScript: {fileID: 0}
+  rayIgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 128
   muzzleFlash:
   - {fileID: 6591002423755035768}
   - {fileID: 6404085632013864183}
   currentClip: 0
-  isPrimary: 1
+  isShotgun: 0
 --- !u!82 &-6241368465781556909
 AudioSource:
   m_ObjectHideFlags: 0

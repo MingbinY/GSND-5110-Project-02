@@ -176,7 +176,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 3940135816442214124}
   - {fileID: 2991880008940170062}
-  speed: 1
+  speed: 3
   waitTime: 2
 --- !u!1 &8480236131628662282
 GameObject:
@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 1257430052769070386}
   - component: {fileID: 6495358528876533403}
   - component: {fileID: 129164740097393987}
+  - component: {fileID: 6245779276121790435}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -207,7 +208,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 0.5, z: 2}
+  m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3366383690271227424}
@@ -283,3 +284,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &6245779276121790435
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8480236131628662282}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

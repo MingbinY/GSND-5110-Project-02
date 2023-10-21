@@ -135,6 +135,9 @@ MonoBehaviour:
   cam: {fileID: 0}
   muzzle: {fileID: 3250980605793896350}
   recoilScript: {fileID: 0}
+  rayIgnoreLayer:
+    serializedVersion: 2
+    m_Bits: 128
   muzzleFlash:
   - {fileID: 5791460518181460344}
   - {fileID: 6705439598881568836}

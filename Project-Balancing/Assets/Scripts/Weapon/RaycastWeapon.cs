@@ -11,6 +11,7 @@ public class RaycastWeapon : MonoBehaviour
     public Camera cam;
     public Transform muzzle;
     public Recoil recoilScript;
+    public LayerMask rayIgnoreLayer;
 
     private ParticleSystem impactEffect;
     [SerializeField] private List<ParticleSystem> muzzleFlash;
@@ -72,13 +73,13 @@ public class RaycastWeapon : MonoBehaviour
         RaycastHit hit;
         Vector3 fwd = cam.transform.forward;
         if (hasRecoil) recoilScript.RecoilFire(recoil);
-        if (Physics.Raycast(cam.transform.position, fwd, out hit)) // player aim at something
+        if (Physics.Raycast(cam.transform.position, fwd, out hit, float.MaxValue, ~rayIgnoreLayer)) // player aim at something
         {
             GameObject objectHit = hit.collider.gameObject;
             //Generate tracer effect
 
             tracer.transform.position = hit.point;
-            if (Physics.Raycast(muzzle.transform.position, objectHit.transform.position - muzzle.transform.position, out hit))
+            if (Physics.Raycast(muzzle.transform.position, objectHit.transform.position - muzzle.transform.position, out hit, float.MaxValue, ~rayIgnoreLayer))
             {
                 //Actual object hit by weapon
                 objectHit = hit.collider.gameObject;

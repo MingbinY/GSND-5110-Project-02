@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyRaycastWeapon : MonoBehaviour
 {
     public GameObject agent;
-
+    public LayerMask rayIgnoreLayer;
     public WeaponStats weaponStats;
     public Transform muzzle;
     AudioSource weaponAudioSource;
@@ -63,7 +63,7 @@ public class EnemyRaycastWeapon : MonoBehaviour
         fwd = fwd + agent.transform.TransformDirection(new Vector3(Random.Range(-bulletSpreadVariance.x, bulletSpreadVariance.x), Random.Range(-bulletSpreadVariance.y, bulletSpreadVariance.y), Random.Range(-bulletSpreadVariance.z, bulletSpreadVariance.z)));
         if (!addBulletSpread)
             fwd = agent.transform.forward;
-        if (Physics.Raycast(agent.transform.position, fwd, out hit)) // player aim at something
+        if (Physics.Raycast(agent.transform.position, fwd, out hit, float.MaxValue, ~rayIgnoreLayer)) // player aim at something
         {
             GameObject objectHit = hit.collider.gameObject;
             //Generate tracer effect

@@ -27,7 +27,7 @@ public class PlayerWeaponSlot : MonoBehaviour
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) EquipWeapon(0);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) EquipWeapon(1);
+        //if (Input.GetKeyDown(KeyCode.Alpha2)) EquipWeapon(1);
 
         if (isFiring)
         {

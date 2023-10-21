@@ -183,6 +183,8 @@ MonoBehaviour:
   isInvincible: 0
   deathSFX: {fileID: 4499224777299459797, guid: 7864b02756ec794419a087a5eba3f615,
     type: 3}
+  ammoDrop: {fileID: 8836574993080249040, guid: a7a85c2f848616846b428dbaf15af186,
+    type: 3}
 --- !u!114 &4089616119035195411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +208,7 @@ MonoBehaviour:
   sightRange: 50
   attackRange: 30
   attackStopRange: 10
-  attackInterval: 3
+  attackInterval: 2
   lastAttackTime: 0
 --- !u!114 &2753871591740366102
 MonoBehaviour:

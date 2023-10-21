@@ -149,7 +149,7 @@ MonoBehaviour:
   initialState: 0
   detectionRange: 30
   sightRange: 30
-  attackRange: 15
+  attackRange: 20
   attackStopRange: 4
   weaponPrefab: {fileID: 3786691775731841965, guid: d7d6d0111c57cc04a985186ae6d7ece7,
     type: 3}
@@ -171,6 +171,8 @@ MonoBehaviour:
   regenerateRate: 0
   isInvincible: 0
   deathSFX: {fileID: 4499224777299459797, guid: 7864b02756ec794419a087a5eba3f615,
+    type: 3}
+  ammoDrop: {fileID: 8836574993080249040, guid: a7a85c2f848616846b428dbaf15af186,
     type: 3}
 --- !u!114 &577099210281930840
 MonoBehaviour:
