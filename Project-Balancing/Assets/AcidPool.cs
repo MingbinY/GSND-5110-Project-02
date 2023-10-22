@@ -12,6 +12,7 @@ public class AcidPool : MonoBehaviour
     {
         if (other.GetComponent<PlayerHealthManager>() != null)
         {
+            Debug.Log("Player Inside Acid");
             PlayerHealthManager playerHealth = other.GetComponent<PlayerHealthManager>();
             if (Time.time > nextDamageTime)
             {

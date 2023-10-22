@@ -15,7 +15,7 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<EnemyHealthManager>() != null)
+        if (other.GetComponent<EnemyHealthManager>() || other.GetComponent<Pickup>())
         {
             return;
         }
