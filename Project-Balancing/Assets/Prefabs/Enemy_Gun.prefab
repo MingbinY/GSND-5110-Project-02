@@ -147,8 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialState: 0
-  detectionRange: 30
-  sightRange: 30
+  detectionRange: 50
+  sightRange: 50
   attackRange: 15
   attackStopRange: 4
   weaponPrefab: {fileID: 3786691775731841965, guid: d7d6d0111c57cc04a985186ae6d7ece7,
